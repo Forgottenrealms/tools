@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 title="abc">标题</h1>
+		<input type="text" value="abc" id="input">
+		<div class="box container bg">
+			<ul>
+				<li class="test">1</li>
+				<li id="li_inner">2</li>
+				<li class="test">3</li>
+			</ul>
+		</div>
+	
+		<ul class="container">
+			<li class="test">outer_1</li>
+			<li>outer_2</li>
+			<li class="test">outer_3</li>
+		</ul>
+		
+		<script src="tools.js"></script>
+		<script>
+			var r = getElementsByClassName("container");
+			console.log(r);
+		</script>
+	
+		<script>
+			// 在div.box 后代查找 .test 的元素
+			// 获取 class 为 box 的元素
+			var _box = getElementsByClassName("box")[0];
+			console.log(_box)
+			var result = getElementsByClassName("test", _box);
+			console.log(result);
+		</script>
+	
+		<script>
+			// 根据id查找
+			console.log($("#li_inner"))
+			// 根据标签查找
+			console.log($("li"))
+			// 根据类名查找
+			console.log($(".test"))
+			// 限定在 div.box 后代查找所有 li		
+			console.log($("li", $(".box")[0]));
+		</script>
+	</body>
+</html>
